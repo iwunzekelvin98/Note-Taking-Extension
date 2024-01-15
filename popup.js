@@ -1,0 +1,3 @@
+document.addEvenetListener('DOMContentLoaded', function () {
+
+})

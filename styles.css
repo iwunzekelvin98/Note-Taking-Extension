@@ -1,0 +1,19 @@
+body {
+    width: 200px;
+    min-height: 200px;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.saved-note {
+    margin-bottom: 5px;
+}
