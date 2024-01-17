@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const noteInput = document.getElementById('note-input');
     const saveButton = document.getElementById('save-button');
     const savedNotesContainer = document.getElementById('saved-notes');
+    const clearButton = document.getElementById('clear-button');
 
     saveButton.addEventListener('click', function () {
         const noteText = noteInput.value.trim();
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
             noteInput.value = '';
         }
     });
+    clearButton.addEventListener('click', function () {
+        clearNotes();
+    })
 
     // Load existing notes on popup open
     loadNotes();
@@ -38,4 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+    function clearNotes() {
+        chrome.storage.sync.set({ notes: [] }, function () {
+            console.log('Notes cleared');
+            loadNotes();
+        });
+    };
+
 });
